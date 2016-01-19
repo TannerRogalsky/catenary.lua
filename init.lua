@@ -98,7 +98,12 @@ local function Catenary(x1, y1, x2, y2, length)
 
   return setmetatable(instance, {
     __index = function(self, x)
-      return catenary(x, self.a, self.x1, self.y1, self.x2, self.y2)
+      local v = rawget(self, x)
+      if v == nil then
+        return catenary(x, self.a, self.x1, self.y1, self.x2, self.y2)
+      else
+        return v
+      end
     end
   })
 end
