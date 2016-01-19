@@ -1,7 +1,15 @@
 # Catenary
+https://en.wikipedia.org/wiki/Catenary
+
+> In physics and geometry, a catenary is the curve that an idealized hanging chain or cable assumes under its own weight when supported only at its ends.
+
+This library was written with with Box2D's RopeJoint in mind but it should be relatively agnostic of such details.
+
 ## API
 `instance = Catenary(x1, y1, x2, y2, length)`: constructor
+
 `instance:updatePoints(x1, y1, x2, y2, length = oldLength)`: updates the catenary control points. `length` defaults to the previous value.
+
 `y = instance[x]`: gets the `y` coordinate for a given `x` where x1 < x < x2. Otherwise, `y` is undefined.
 
 ## Example
